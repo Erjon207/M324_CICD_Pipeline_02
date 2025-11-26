@@ -1,9 +1,15 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders heading text', () => {
+test("renders app title", () => {
   render(<App />);
-  const heading = screen.getByText(/App Ref\. Card 02/i);
-  expect(heading).toBeInTheDocument();
+  const titleElement = screen.getByText(/App Ref. Card 02/i);
+  expect(titleElement).toBeInTheDocument();
+});
+
+test("renders app message", () => {
+  render(<App />);
+  const messageElement = screen.getByText(/react app/i);
+  expect(messageElement).toBeInTheDocument();
 });
